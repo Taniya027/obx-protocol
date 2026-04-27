@@ -1,66 +1,38 @@
-## Foundry
+# ORBEATX (OBX) Token & Vesting Protocol
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A production-grade implementation of the ORBEATX (OBX) ecosystem, featuring a fixed-supply ERC-20 token and a decentralized, factory-patterned vesting architecture.
 
-Foundry consists of:
+## Project Overview
+This protocol was designed to automate complex tokenomics for multiple stakeholder groups (Team, Advisors, Rewards, etc.) while ensuring maximum security through contract isolation.
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+* **Network:** Ethereum Mainnet
+* **Token Standard:** ERC-20 (OpenZeppelin 5.0)
+* **Architecture:** Factory-Vesting Pattern
+* **Development Stack:** Foundry, WSL2, Solidity 0.8.20
 
-## Documentation
+## Architecture & Security
+Instead of a monolithic vesting contract, this project utilizes a **Factory-Vesting Pattern**:
+1.  **OBXToken.sol**: The core contract that manages the 1B supply and automates the deployment of individual vesting instances during construction.
+2.  **OBXVesting.sol**: A standalone, linear vesting contract with:
+    * **SafeERC20**: To handle non-standard token transfers safely.
+    * **ReentrancyGuard**: Protection against recursive call attacks.
+    * **Cliff & Duration**: Fully customizable linear release schedules.
 
-https://book.getfoundry.sh/
+## Testing & Validation
+The protocol is verified using the **Foundry** testing framework. To run the test suite:
 
-## Usage
 
-### Build
+# Install dependencies
+forge install
 
-```shell
-$ forge build
-```
+# Run unit tests
+forge test
+Test Coverage Includes:
+Total supply verification post-deployment.
 
-### Test
+Factory deployment validation for stakeholder instances.
 
-```shell
-$ forge test
-```
+State mutability and access control checks.
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## License
+This project is licensed under the MIT License.
