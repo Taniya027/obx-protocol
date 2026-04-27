@@ -1,12 +1,12 @@
 # ORBEATX (OBX) Token & Vesting Protocol
 
-A production-grade implementation of the ORBEATX (OBX) ecosystem, featuring a fixed-supply ERC-20 token and a decentralized, factory-patterned vesting architecture.
+A production-grade implementation of the ORBEATX (OBX) ecosystem, featuring a fixed-supply BEP-20 token and a decentralized, factory-patterned vesting architecture.
 
 ## Project Overview
 This protocol was designed to automate complex tokenomics for multiple stakeholder groups (Team, Advisors, Rewards, etc.) while ensuring maximum security through contract isolation.
 
-* **Network:** Ethereum Mainnet
-* **Token Standard:** ERC-20 (OpenZeppelin 5.0)
+* **Network:**  BNB Smart Chain (BSC)
+* **Token Standard:** BEP-20 (OpenZeppelin 5.0)
 * **Architecture:** Factory-Vesting Pattern
 * **Development Stack:** Foundry, WSL2, Solidity 0.8.20
 
@@ -33,6 +33,9 @@ Total supply verification post-deployment.
 Factory deployment validation for stakeholder instances.
 
 State mutability and access control checks.
+
+## Deployment Status: 
+The OBX Token and Vesting Factory are successfully deployed on BNB Smart Chain Mainnet. Contract addresses and transaction verified links are available upon request during the technical review stage.
 
 ## License
 This project is licensed under the MIT License.
